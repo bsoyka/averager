@@ -1,7 +1,7 @@
 # averager
 A simple way to average numbers in Python.
 ## Averager
-Averager is the base class of the averager module.  To use the Averager class, create an instance (no parameters are needed), then use the average method to average your numbers.
+`Averager` is the base class of the `averager` module.  To use the `Averager` class, create an instance (no parameters are needed), then use the `average` method to average your numbers.
 ```python
 import averager
 instance = averager.Averager
@@ -9,7 +9,7 @@ instance.average(1, 5)
 # returns 3
 ```
 ## WeightedAverager
-The WeightedAverager allows you to set different weights for the numbers you average.  Initalize an instance of the WeightedAverager class using keyword arguments to set weights to labels which will be used later on.  A weight with a value of 1 is normal.  Then, once you define an instance, call its average method, passing keyword arguments with your labels and values.
+`WeightedAverager` allows you to set different weights for the numbers you average.  Initalize an instance of the `WeightedAverager` class using keyword arguments to set weights to labels which will be used later on.  A weight with a value of 1 is normal.  Then, once you define an instance, call its `average` method, passing keyword arguments with your labels and values.
 ```python
 import averager
 instance = averager.WeightedAverager(a=1, b=2, c=3) # This sets a to be 1x, b to be 2x, and c to be 3x.
