@@ -1,4 +1,5 @@
 # averager
+[![GitHub license](https://img.shields.io/github/license/bsoyka/averager.svg)](https://github.com/bsoyka/averager/blob/master/LICENSE)
 A simple way to average numbers in Python.
 ## Averager
 `Averager` is the base class of the `averager` module.  To use the `Averager` class, create an instance (no parameters are needed), then use the `average` method to average your numbers.
