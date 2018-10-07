@@ -1,20 +1,43 @@
-# averager
-[![GitHub license](https://img.shields.io/github/license/bsoyka/averager.svg)](https://github.com/bsoyka/averager/blob/master/LICENSE)
+# Getting started
 
-A simple way to average numbers in Python.
 ## Averager
-`Averager` is the base class of the `averager` module.  To use the `Averager` class, create an instance (no parameters are needed), then use the `average` method to average your numbers.
+
+This is the most basic class in the averager module.  It allows you to simply average any quantity of numbers.
+
 ```python
 import averager
 instance = averager.Averager
-instance.average(1, 5)
-# returns 3
+print(instance.average(1, 5))
+# 3
 ```
-## WeightedAverager
-`WeightedAverager` allows you to set different weights for the numbers you average.  Initalize an instance of the `WeightedAverager` class using keyword arguments to set weights to labels which will be used later on.  A weight with a value of 1 is normal.  Then, once you define an instance, call its `average` method, passing keyword arguments with your labels and values.
+
+### Usage
+
+The Averager class allows you to make an instance, and then use its average method with any quantity of numbers as the parameters.  The average method will return a float object, or an int object if it is equivalent.  For example, instead of 3.0, it returns 3, but 5.5 stays the same.
+
 ```python
 import averager
-instance = averager.WeightedAverager(a=1, b=2, c=3) # This sets a to be 1x, b to be 2x, and c to be 3x.
-instance.average(a=1, c=2) # This passes 1 as a and 2 as c, so 2 has 3x the weight of 1.
-# returns 1.75
+print(averager.Averager.average(1, 5))
+# 3
 ```
+
+## WeightedAverager
+
+The WeightedAverager class is very similar to the Averager class, but the WeightedAverager class allows you to set different weights to be used when averaging numbers.
+
+```python
+import averager
+instance = averager.WeightedAverager(a=1, b=2, c=3)
+print(instance.average(a=1, c=2))
+# 1.75
+```
+
+### Usage
+
+Usage of the WeightedAverager class is similar to that of the Averager class.  First, initialize an instance of the class, passing keyword arguments with the labels for your numbers and the weights attached to those labels.  These labels will need to be used again.  Then, run the instance's average method, passing keyword arguments with some or all of the labels you specified in the initialization, as well as values for each one.  The method will take into account the weight for each number specified, and will average the numbers accordingly.
+
+### Potential errors
+
+* When initializing an instance of the WeightedAverager, if a weight below zero is passed, a ValueError will be raised.
+* When running the average method, if a label is passed that does not have a weight assigned to it, a KeyError will be raised.
+
