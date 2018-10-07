@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(name='averager',
-      version='1.0.2',
+      version='1.0.3',
       description='A simple averager',
       url='http://github.com/bsoyka/averager',
       author='Benjamin Soyka',
