@@ -1,5 +1,5 @@
 class Averager:
-    
+
     def average(*numbers):
         average = sum(numbers) / len(numbers)
         if average == int(average):
@@ -7,15 +7,15 @@ class Averager:
         else:
             return average
 
+
 class WeightedAverager(Averager):
-    
+
     def __init__(self, **weights):
         for weight in weights:
             if weights[weight] < 0:
                 raise ValueError("Weights cannot be less than zero.")
         self.weights = weights
-    
-    
+
     def average(self, **numbers):
         dividend = 0.0
         divisor = 0
