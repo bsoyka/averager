@@ -1,5 +1,11 @@
 # Getting started
 
+[![GitHub release](https://img.shields.io/github/release/bsoyka/averager.svg)](https://github.com/bsoyka/averager/releases)
+[![PyPI](https://img.shields.io/pypi/v/averager.svg)](https://pypi.org/project/averager)
+[![GitHub issues](https://img.shields.io/github/issues-raw/bsoyka/averager.svg)](https://github.com/bsoyka/averager/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/bsoyka/averager.svg)](https://github.com/bsoyka/averager/pulls)
+[![License](https://img.shields.io/github/license/bsoyka/averager.svg)](https://github.com/bsoyka/averager/blob/master/LICENSE)
+
 ## Averager
 
 This is the most basic class in the averager module.  It allows you to simply average any quantity of numbers.
