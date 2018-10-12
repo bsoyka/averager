@@ -1,4 +1,4 @@
 language: python
 python:
- - "stable"
+ - "3.6"
 script: python testing.py
