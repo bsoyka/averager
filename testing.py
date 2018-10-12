@@ -6,7 +6,7 @@ class TestAverager(unittest.TestCase):
         self.assertEqual(averager.Averager.average(1, 5), 3)
 
 class TestWeightedAverager(unittest.TestCase):
-    
+
     def setUp(self):
         self.averager_instance = averager.WeightedAverager(a=1, b=2, c=3)
     
