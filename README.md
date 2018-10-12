@@ -1,6 +1,7 @@
 # Getting started
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3b275766803c4c188d03b924b6c22e19)](https://app.codacy.com/app/bensoyka/averager?utm_source=github.com&utm_medium=referral&utm_content=bsoyka/averager&utm_campaign=Badge_Grade_Dashboard)
+[![Build Status](https://travis-ci.org/bsoyka/averager.svg?branch=master)](https://travis-ci.org/bsoyka/averager)
 [![GitHub release](https://img.shields.io/github/release/bsoyka/averager.svg)](https://github.com/bsoyka/averager/releases)
 [![PyPI](https://img.shields.io/pypi/v/averager.svg)](https://pypi.org/project/averager)
 [![GitHub issues](https://img.shields.io/github/issues-raw/bsoyka/averager.svg)](https://github.com/bsoyka/averager/issues)
