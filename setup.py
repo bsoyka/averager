@@ -10,6 +10,7 @@ setuptools.setup(
     author_email="bensoyka@icloud.com",
     description="Simple utilities for calculating averages",
     long_description=long_description,
+    long_description_content_type="text/markdown",
     url="https://averager.readthedocs.io/",
     packages=setuptools.find_packages(),
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, !=3.6.*",
