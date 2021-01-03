@@ -1,34 +1,59 @@
-class Averager:
+"""Simple utilities for calculating averages"""
 
-    def average(*numbers):
-        average = sum(numbers) / len(numbers)
-        if average == int(average):
-            return int(average)
-        else:
-            return average
+from __future__ import division
+
+__version__ = "2.0.0"
 
 
-class WeightedAverager(Averager):
+def average(values):
+    """Calculates an unweighted average
 
-    def __init__(self, **weights):
-        for weight in weights:
-            if weights[weight] < 0:
-                raise ValueError("Weights cannot be less than zero.")
-        self.weights = weights
+    Args:
+        values (Iterable): The values to find the average of
 
-    def average(self, **numbers):
-        dividend = 0.0
-        divisor = 0
-        for name in numbers:
-            number = numbers[name]
-            if name in self.weights:
-                weight = self.weights[name]
-            else:
-                raise ValueError("Weight for {} not defined.".format(name))
-            dividend += number * weight
-            divisor += weight
-        average = dividend / divisor
-        if average == int(average):
-            return int(average)
-        else:
-            return average
+    Returns:
+        The average of the inputs
+
+    Example:
+        >>> average([1, 2, 3])
+        2
+    """
+
+    res = sum(values) / len(values)
+
+    if res == int(res):
+        return int(res)
+
+    return res
+
+
+def weighted_average(values):
+    """Calculates an weighted average
+
+    Args:
+        values (Iterable): The values to find the average as an iterable of
+            ``(value, weight)`` pairs
+
+    Returns:
+        The weighted average of the inputs
+
+    Example:
+        >>> weighted_average([(1, 2), (2, 3)])
+        1.6
+    """
+
+    if any(weight < 0 for _, weight in values):
+        raise ValueError("Weights cannot be less than zero")
+
+    dividend, divisor = 0, 0
+
+    for value, weight in values:
+        dividend += value * weight
+        divisor += weight
+
+    res = dividend / divisor
+
+    if res == int(res):
+        return int(res)
+
+    return res
