@@ -1,4 +1,4 @@
-from pytest import mark, raises
+from pytest import approx, mark, raises
 
 from averager import average
 
@@ -8,8 +8,7 @@ from averager import average
     [([1, 2], 1.5), ([2, 2, 2, 2, 2], 2), ([1, 2, 3, 4, 5], 3)],
 )
 def test_average(values, expected):
-    assert average(values) == expected
-    assert type(average(values)) == type(expected)
+    assert average(values) == approx(expected)
 
 
 def test_average_no_values():
@@ -19,5 +18,4 @@ def test_average_no_values():
 
 @mark.parametrize("value", [-5, -2.5, -1, 0, 1, 2.5, 5])
 def test_average_one_value(value):
-    assert average([value]) == value
-    assert type(average([value])) == type(value)
+    assert average([value]) == approx(value)

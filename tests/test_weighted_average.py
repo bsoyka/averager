@@ -1,5 +1,7 @@
-from pytest import mark, raises
 from random import random
+
+from pytest import approx, mark, raises
+
 from averager import weighted_average
 
 
@@ -11,8 +13,7 @@ from averager import weighted_average
     ],
 )
 def test_weighted_average(test_input, expected):
-    assert weighted_average(test_input) == expected
-    assert type(weighted_average(test_input)) == type(expected)
+    assert weighted_average(test_input) == approx(expected)
 
 
 def test_weighted_average_no_values():
@@ -27,5 +28,4 @@ def test_weighted_average_negative_weights():
 
 @mark.parametrize("value", [1, 53, -4, 6.2, 2.4738])
 def test_weighted_average_one_value(value):
-    assert weighted_average([(value, random() * 100)]) == value
-    assert type(weighted_average([(value, random() * 100)])) == type(value)
+    assert weighted_average([(value, random() * 100)]) == approx(value)
