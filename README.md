@@ -15,6 +15,7 @@
 [![Testing](https://img.shields.io/github/workflow/status/bsoyka/averager/Test%20with%20pytest?label=tests)](https://github.com/bsoyka/averager/actions?query=workflow%3A%22Test+with+pytest%22)
 [![License](https://img.shields.io/pypi/l/averager)](https://github.com/bsoyka/averager/blob/master/LICENSE)
 [![Version](https://img.shields.io/pypi/v/averager?label=latest)](https://pypi.org/project/averager)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbsoyka%2Faverager.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbsoyka%2Faverager?ref=badge_shield)
 
 ## Installation
 
@@ -29,3 +30,7 @@ Averager officially supports Python 2.7 & 3.7+.
 ## API Reference
 
 See [Read the Docs](https://averager.readthedocs.io) for Averager's documentation.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbsoyka%2Faverager.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbsoyka%2Faverager?ref=badge_large)
