@@ -36,7 +36,7 @@ Averager is available on PyPI:
 
     $ python -m pip install averager
 
-Averager officially supports Python 2.7 & 3.7+.
+Averager officially supports Python 2.7 & 3.5+.
 
 API Reference
 -------------
