@@ -2,7 +2,7 @@
 
 from __future__ import division
 
-__version__ = "2.0.0"
+__version__ = "2.0.1"
 
 
 def average(values):
