@@ -4,6 +4,27 @@ from __future__ import division
 
 __version__ = "2.0.1"
 
+def _optional_int(value):
+    """Converts a ``float`` to an ``int`` if they're the same value
+
+    Args:
+        value (float)
+
+    Returns:
+        Either the original input or the input as an ``int``
+
+    Example:
+        >>> _optional_int(3.0)
+        3
+
+        >>> _optional_int(1.2)
+        1.2
+    """
+
+    if value == int(value):
+        return int(value)
+
+    return value
 
 def average(values):
     """Calculates an unweighted average
@@ -21,10 +42,7 @@ def average(values):
 
     res = sum(values) / len(values)
 
-    if res == int(res):
-        return int(res)
-
-    return res
+    return _optional_int(res)
 
 
 def weighted_average(values):
@@ -53,7 +71,4 @@ def weighted_average(values):
 
     res = dividend / divisor
 
-    if res == int(res):
-        return int(res)
-
-    return res
+    return _optional_int(res)
