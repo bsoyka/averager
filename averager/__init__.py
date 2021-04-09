@@ -42,12 +42,12 @@ def weighted_average(values):
         1.6
     """
 
-    if any(weight < 0 for _, weight in values):
-        raise ValueError("Weights cannot be less than zero")
-
     dividend, divisor = 0, 0
 
     for value, weight in values:
+        if weight < 0:
+            raise ValueError("Weights cannot be less than zero")
+
         dividend += value * weight
         divisor += weight
 
