@@ -5,7 +5,7 @@ with open("README.md") as file:
 
 setuptools.setup(
     name="averager",
-    version="2.0.1",
+    version="2.0.2",
     author="Ben Soyka",
     author_email="bensoyka@icloud.com",
     description="Simple utilities for calculating averages",

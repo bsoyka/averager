@@ -2,7 +2,8 @@
 
 from __future__ import division
 
-__version__ = "2.0.1"
+__version__ = "2.0.2"
+
 
 def _optional_int(value):
     """Converts a ``float`` to an ``int`` if they're the same value
@@ -25,6 +26,7 @@ def _optional_int(value):
         return int(value)
 
     return value
+
 
 def average(values):
     """Calculates an unweighted average
