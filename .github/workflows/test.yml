@@ -1,4 +1,4 @@
-name: Test with pytest & publish coverage
+name: Test with pytest
 
 on: [push, pull_request]
 
@@ -28,27 +28,3 @@ jobs:
             - name: Run tests
               run: |
                   pytest
-
-    coverage:
-        needs: [test]
-        runs-on: ubuntu-latest
-
-        steps:
-            - uses: actions/checkout@v2
-            - name: Set up Python 3.9
-              uses: actions/setup-python@v2
-              with:
-                  python-version: 3.9
-            - name: Install dependencies
-              run: |
-                  python -m pip install --upgrade pip
-                  pip install pytest coverage
-            - name: Install module
-              run: |
-                  pip install .
-            - name: Test & publish code coverage
-              uses: paambaati/codeclimate-action@v2.7.5
-              env:
-                  CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-              with:
-                  coverageCommand: coverage run -m pytest
