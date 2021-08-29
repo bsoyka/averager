@@ -2,7 +2,7 @@
 
 from __future__ import division
 
-__version__ = "2.0.2"
+__version__ = '2.0.2'
 
 
 def _optional_int(value):
@@ -66,7 +66,7 @@ def weighted_average(values):
 
     for value, weight in values:
         if weight < 0:
-            raise ValueError("Weights cannot be less than zero")
+            raise ValueError('Weights cannot be less than zero')
 
         dividend += value * weight
         divisor += weight
