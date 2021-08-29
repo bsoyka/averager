@@ -1,5 +1,5 @@
-from py import test
 from pytest import mark
+
 from averager import _optional_int
 
 
