@@ -16,6 +16,7 @@ def test_median_odd_values_len(values, expected):
     result = median(*values)
 
     assert result == expected
+    assert type(result) == type(expected)
 
 
 @mark.parametrize(

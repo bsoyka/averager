@@ -6,7 +6,7 @@ from averager import weighted_average
 
 
 @mark.parametrize(
-    "test_input,expected",
+    'test_input,expected',
     [
         [[(50, 15), (76, 20), (80, 20), (98, 45)], 82.8],
         [[(20, 7), (45, 3), (15, 4), (0, 2)], 20.9375],
@@ -16,6 +16,8 @@ def test_weighted_average(test_input, expected):
     result = weighted_average(*test_input)
 
     assert result == approx(expected)
+    assert type(result) == type(expected)
+
 
 def test_weighted_average_no_values():
     with raises(ZeroDivisionError):
@@ -32,3 +34,4 @@ def test_weighted_average_one_value(value):
     result = weighted_average((value, random() * 100))
 
     assert result == approx(value)
+    # Not asserting type because the result is sometimes a float
