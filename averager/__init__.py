@@ -77,7 +77,7 @@ def weighted_average(*values):
 
 
 def median(*values):
-    """Calculates the median
+    """Calculates the median, or middle number
 
     Args:
         values: The values to find the median of
