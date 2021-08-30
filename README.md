@@ -3,11 +3,17 @@
 **Averager** is a simple way to calculate averages of values.
 
 ```py
->>> average([1, 2, 3])
+>>> average(1, 2, 3)
 2
 
->>> weighted_average([(1, 2), (2, 3)])
+>>> weighted_average((1, 2), (2, 3))
 1.6
+
+>>> median(5, 1, 2)
+2
+
+>>> mode(1, 2, 4, 3, 3)
+3
 ```
 
 [![Downloads](https://pepy.tech/badge/averager)](https://pepy.tech/project/averager)
