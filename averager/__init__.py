@@ -28,17 +28,17 @@ def _optional_int(value):
     return value
 
 
-def average(values):
+def average(*values):
     """Calculates an unweighted average
 
     Args:
-        values (Iterable): The values to find the average of
+        values: The values to find the average of
 
     Returns:
         The average of the inputs
 
     Example:
-        >>> average([1, 2, 3])
+        >>> average(1, 2, 3)
         2
     """
 
@@ -47,18 +47,18 @@ def average(values):
     return _optional_int(res)
 
 
-def weighted_average(values):
+def weighted_average(*values):
     """Calculates an weighted average
 
     Args:
-        values (Iterable): The values to find the average as an iterable of
+        values: The values to find the average as an iterable of
             ``(value, weight)`` pairs
 
     Returns:
         The weighted average of the inputs
 
     Example:
-        >>> weighted_average([(1, 2), (2, 3)])
+        >>> weighted_average((1, 2), (2, 3))
         1.6
     """
 
@@ -76,20 +76,20 @@ def weighted_average(values):
     return _optional_int(res)
 
 
-def median(values):
+def median(*values):
     """Calculates the median
 
     Args:
-        values (Iterable): The values to find the median of
+        values: The values to find the median of
 
     Returns:
         The median of the inputs
 
     Examples:
-        >>> median([1, 2, 3])
+        >>> median(1, 2, 3)
         2
 
-        >>> median([1, 2, 3, 4])
+        >>> median(1, 2, 3, 4)
         2.5
     """
 
@@ -97,6 +97,6 @@ def median(values):
     middle = len(values) // 2
 
     if len(values) % 2 == 0:
-        return average((values[middle], values[middle - 1]))
+        return average(values[middle], values[middle - 1])
 
     return _optional_int(values[middle])

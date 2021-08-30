@@ -13,8 +13,9 @@ from averager import median
     ],
 )
 def test_median_odd_values_len(values, expected):
-    assert median(values) == expected
-    assert type(median(values)) == type(expected)
+    result = median(*values)
+
+    assert result == expected
 
 
 @mark.parametrize(
@@ -22,14 +23,16 @@ def test_median_odd_values_len(values, expected):
     [([1, 2, 3, 4, 5, 6], 3.5), ([1, 2], 1.5), ([5, 1, 3], 3)],
 )
 def test_median_even_values_len(values, expected):
-    assert median(values) == expected
-    assert type(median(values)) == type(expected)
+    result = median(*values)
+
+    assert result == expected
+    assert type(result) == type(expected)
 
 
 def test_median_empty_list():
     with raises(IndexError):
-        median([])
+        median()
 
 
 def test_median_one_value():
-    assert median([1]) == 1
+    assert median(1) == 1

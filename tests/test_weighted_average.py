@@ -13,19 +13,22 @@ from averager import weighted_average
     ],
 )
 def test_weighted_average(test_input, expected):
-    assert weighted_average(test_input) == approx(expected)
+    result = weighted_average(*test_input)
 
+    assert result == approx(expected)
 
 def test_weighted_average_no_values():
     with raises(ZeroDivisionError):
-        weighted_average([])
+        weighted_average()
 
 
 def test_weighted_average_negative_weights():
     with raises(ValueError):
-        weighted_average([(1, -1), (0, -2)])
+        weighted_average((1, -1), (0, -2))
 
 
-@mark.parametrize("value", [1, 53, -4, 6.2, 2.4738])
+@mark.parametrize('value', [1, 53, -4, 6.2, 2.4738])
 def test_weighted_average_one_value(value):
-    assert weighted_average([(value, random() * 100)]) == approx(value)
+    result = weighted_average((value, random() * 100))
+
+    assert result == approx(value)
