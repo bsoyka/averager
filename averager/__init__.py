@@ -74,3 +74,29 @@ def weighted_average(values):
     res = dividend / divisor
 
     return _optional_int(res)
+
+
+def median(values):
+    """Calculates the median
+
+    Args:
+        values (Iterable): The values to find the median of
+
+    Returns:
+        The median of the inputs
+
+    Examples:
+        >>> median([1, 2, 3])
+        2
+
+        >>> median([1, 2, 3, 4])
+        2.5
+    """
+
+    values = sorted(values)
+    middle = len(values) // 2
+
+    if len(values) % 2 == 0:
+        return average((values[middle], values[middle - 1]))
+
+    return _optional_int(values[middle])
