@@ -100,3 +100,33 @@ def median(*values):
         return average(values[middle], values[middle - 1])
 
     return _optional_int(values[middle])
+
+
+def mode(*values):
+    """Calculates the mode, or most common value
+
+    Args:
+        values: The values to find the mode of
+
+    Returns:
+        The mode(s) of the inputs (returned as a set if more than one)
+
+    Examples:
+        >>> mode(1, 2, 2, 3)
+        2
+
+        >>> mode(1, 1, 2, 2)
+        {1, 2}
+    """
+
+    counts = {}
+
+    for value in values:
+        counts[value] = counts.get(value, 0) + 1
+
+    result = {k for k, v in counts.items() if v == max(counts.values())}
+
+    if len(result) == 1:
+        return result.pop()
+
+    return result
