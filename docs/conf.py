@@ -23,8 +23,8 @@ copyright = "2021, Benjamin Soyka"
 author = "Ben Soyka"
 
 # The full version, including alpha/beta/rc tags
-version = "2.0.2"
-release = "2.0.2"
+version = "3.0.0"
+release = "3.0.0"
 
 
 # -- General configuration ---------------------------------------------------

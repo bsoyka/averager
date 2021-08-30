@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "averager"
-version = "2.0.2"
+version = "3.0.0"
 description = "Simple utilities for calculating averages"
 authors = ["Ben Soyka <bensoyka@icloud.com>"]
 license = "MIT"
