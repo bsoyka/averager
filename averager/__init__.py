@@ -1,7 +1,5 @@
 """Simple utilities for calculating averages"""
 
-from __future__ import division
-
 __version__ = '3.0.0'
 
 
