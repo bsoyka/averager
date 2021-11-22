@@ -1,6 +1,6 @@
 from pytest import mark
 
-from averager import _optional_int
+from averager._utils import _optional_int
 
 
 @mark.parametrize('test_input', [1, 2, 3, 4, 5])
