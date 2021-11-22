@@ -1,32 +1,13 @@
 """Simple utilities for calculating averages"""
 
+from typing import Iterable, Union
+
+from ._utils import _optional_int
+
 __version__ = '3.0.0'
 
 
-def _optional_int(value):
-    """Converts a ``float`` to an ``int`` if they're the same value
-
-    Args:
-        value (float)
-
-    Returns:
-        Either the original input or the input as an ``int``
-
-    Example:
-        >>> _optional_int(3.0)
-        3
-
-        >>> _optional_int(1.2)
-        1.2
-    """
-
-    if value == int(value):
-        return int(value)
-
-    return value
-
-
-def average(*values):
+def average(*values: Union[float, int]) -> Union[float, int]:
     """Calculates an unweighted average
 
     Args:
@@ -45,7 +26,9 @@ def average(*values):
     return _optional_int(res)
 
 
-def weighted_average(*values):
+def weighted_average(
+    *values: Iterable[Union[float, int]]
+) -> Union[float, int]:
     """Calculates an weighted average
 
     Args:
@@ -74,7 +57,7 @@ def weighted_average(*values):
     return _optional_int(res)
 
 
-def median(*values):
+def median(*values: Union[float, int]) -> Union[float, int]:
     """Calculates the median, or middle number
 
     Args:
@@ -100,7 +83,7 @@ def median(*values):
     return _optional_int(values[middle])
 
 
-def mode(*values):
+def mode(*values: Union[float, int]) -> Union[float, int]:
     """Calculates the mode, or most common value
 
     Args:
