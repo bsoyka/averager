@@ -31,6 +31,7 @@ setuptools.setup(
     ],
     project_urls={
         'Source': 'https://github.com/bsoyka/averager',
+        'Documentation': 'https://averager.readthedocs.io',
         'Changelog': 'https://github.com/bsoyka/averager/releases',
     },
 )
