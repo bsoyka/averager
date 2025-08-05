@@ -48,7 +48,7 @@ def weighted_average(*values: Iterable[float | int]) -> float | int:
         >>> weighted_average((1, 2), (2, 3))
         1.6
     """
-    dividend, divisor = 0, 0
+    dividend, divisor = 0.0, 0.0
 
     for value, weight in values:
         if weight < 0:
@@ -79,16 +79,16 @@ def median(*values: float) -> float | int:
         >>> median(1, 2, 3, 4)
         2.5
     """
-    values = sorted(values)
+    sorted_values = sorted(values)
     middle = len(values) // 2
 
     if len(values) % 2 == 0:
-        return average(values[middle], values[middle - 1])
+        return average(sorted_values[middle], sorted_values[middle - 1])
 
-    return _optional_int(values[middle])
+    return _optional_int(sorted_values[middle])
 
 
-def mode(*values: float) -> float | int:
+def mode(*values: float) -> float | int | set[float | int]:
     """Calculate the mode, or most common value.
 
     Args:
@@ -104,7 +104,7 @@ def mode(*values: float) -> float | int:
         >>> mode(1, 1, 2, 2)
         {1, 2}
     """
-    counts = {}
+    counts: dict[float | int, int] = {}
 
     for value in values:
         counts[value] = counts.get(value, 0) + 1
