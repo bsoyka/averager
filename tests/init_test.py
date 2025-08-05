@@ -5,7 +5,7 @@ from pathlib import Path
 from averager import __version__
 
 try:
-    import tomllib
+    import tomllib  # type: ignore[import-not-found,unused-ignore]
 except ModuleNotFoundError:
     import tomli as tomllib  # type: ignore[no-redef]
 
