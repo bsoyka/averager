@@ -1,11 +1,11 @@
-from typing import Union
+from __future__ import annotations
 
 
-def _optional_int(value: float) -> Union[float, int]:
-    """Converts a ``float`` to an ``int`` if they're the same value
+def _optional_int(value: float) -> float | int:
+    """Convert a ``float`` to an ``int`` if they're the same value.
 
     Args:
-        value (float)
+        value: The value to convert
 
     Returns:
         Either the original input or the input as an ``int``

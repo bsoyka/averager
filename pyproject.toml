@@ -94,6 +94,7 @@ flake8-tidy-imports.ban-relative-imports = "all"
     "PLC2701", # Checks for private name imports.
     "PLR2004", # Checks for "magic" values.
     "S101",    # Checks for the use of assert statements.
+    "S311",    # Checks for standard random module usage.
 ]
 "docs/conf.py" = [
     "INP",     # Checks for packages missing an __init__.py file.

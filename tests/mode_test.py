@@ -1,10 +1,14 @@
-from pytest import mark
+"""Test the mode function."""
+
+from __future__ import annotations
+
+import pytest
 
 from averager import mode
 
 
-@mark.parametrize(
-    'values,expected',
+@pytest.mark.parametrize(
+    ('values', 'expected'),
     [
         ((1, 2, 3), {1, 2, 3}),
         ((1, 1, 1, 1), 1),
@@ -12,8 +16,9 @@ from averager import mode
         ((1, 2, 1, 2), {1, 2}),
     ],
 )
-def test_mode(values, expected):
+def test_mode(values: tuple[int], expected: int | set[int]) -> None:
+    """Test the mode of a list of values."""
     result = mode(*values)
 
     assert result == expected
-    assert type(result) == type(expected)
+    assert type(result) is type(expected)

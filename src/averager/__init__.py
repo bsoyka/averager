@@ -1,13 +1,20 @@
 """A simple Python library to calculate averages of values."""
 
-from typing import Union,Iterable
-from averager._utils import _optional_int
+from __future__ import annotations
+
 import importlib.metadata
+from typing import TYPE_CHECKING
+
+from averager._utils import _optional_int
+
+if TYPE_CHECKING:
+    from collections.abc import Iterable
 
 __version__ = importlib.metadata.version('averager')
 
-def average(*values: Union[float, int]) -> Union[float, int]:
-    """Calculates an unweighted average
+
+def average(*values: float) -> float | int:
+    """Calculate an unweighted average.
 
     Args:
         values: The values to find the average of
@@ -19,16 +26,13 @@ def average(*values: Union[float, int]) -> Union[float, int]:
         >>> average(1, 2, 3)
         2
     """
-
     res = sum(values) / len(values)
 
     return _optional_int(res)
 
 
-def weighted_average(
-    *values: Iterable[Union[float, int]]
-) -> Union[float, int]:
-    """Calculates an weighted average
+def weighted_average(*values: Iterable[float | int]) -> float | int:
+    """Calculate a weighted average.
 
     Args:
         values: The values to find the average as an iterable of
@@ -37,16 +41,19 @@ def weighted_average(
     Returns:
         The weighted average of the inputs
 
+    Raises:
+        ValueError: If any weight is less than zero
+
     Example:
         >>> weighted_average((1, 2), (2, 3))
         1.6
     """
-
     dividend, divisor = 0, 0
 
     for value, weight in values:
         if weight < 0:
-            raise ValueError('Weights cannot be less than zero')
+            error = 'Weights cannot be less than zero'
+            raise ValueError(error)
 
         dividend += value * weight
         divisor += weight
@@ -56,8 +63,8 @@ def weighted_average(
     return _optional_int(res)
 
 
-def median(*values: Union[float, int]) -> Union[float, int]:
-    """Calculates the median, or middle number
+def median(*values: float) -> float | int:
+    """Calculate the median, or middle number.
 
     Args:
         values: The values to find the median of
@@ -72,7 +79,6 @@ def median(*values: Union[float, int]) -> Union[float, int]:
         >>> median(1, 2, 3, 4)
         2.5
     """
-
     values = sorted(values)
     middle = len(values) // 2
 
@@ -82,8 +88,8 @@ def median(*values: Union[float, int]) -> Union[float, int]:
     return _optional_int(values[middle])
 
 
-def mode(*values: Union[float, int]) -> Union[float, int]:
-    """Calculates the mode, or most common value
+def mode(*values: float) -> float | int:
+    """Calculate the mode, or most common value.
 
     Args:
         values: The values to find the mode of
@@ -98,7 +104,6 @@ def mode(*values: Union[float, int]) -> Union[float, int]:
         >>> mode(1, 1, 2, 2)
         {1, 2}
     """
-
     counts = {}
 
     for value in values:
