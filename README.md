@@ -1,37 +1,47 @@
 # Averager
 
-**Averager** is a simple way to calculate averages of values.
+**Averager** is a simple Python library to calculate averages of values.
 
-```py
->>> average(1, 2, 3)
+```python
+>>> import averager
+>>> averager.average(1, 2, 3)
 2
-
->>> weighted_average((1, 2), (2, 3))
+>>> averager.weighted_average((1, 2), (2, 3))
 1.6
-
->>> median(5, 1, 2)
+>>> averager.median(5, 1, 2)
 2
-
->>> mode(1, 2, 4, 3, 3)
+>>> averager.mode(1, 2, 4, 3, 3)
 3
 ```
 
-[![Downloads](https://pepy.tech/badge/averager)](https://pepy.tech/project/averager)
-[![Supported Versions](https://img.shields.io/pypi/pyversions/averager.svg)](https://pypi.org/project/averager)
-[![Testing](https://img.shields.io/github/workflow/status/bsoyka/averager/Test%20with%20pytest?label=tests)](https://github.com/bsoyka/averager/actions?query=workflow%3A%22Test+with+pytest%22)
-[![License](https://img.shields.io/pypi/l/averager)](https://github.com/bsoyka/averager/blob/master/LICENSE)
-[![Version](https://img.shields.io/pypi/v/averager?label=latest)](https://pypi.org/project/averager)
+[![Total Downloads](https://img.shields.io/pepy/dt/averager)][pypi]
+[![Supported Versions](https://img.shields.io/pypi/pyversions/averager.svg)][pypi]
+[![Testing Status](https://img.shields.io/github/actions/workflow/status/bsoyka/averager/test.yml?branch=main&label=tests)][testing]
+[![Coverage](https://img.shields.io/codecov/c/github/bsoyka/averager)][codecov]
+[![GitHub last commit](https://img.shields.io/github/last-commit/bsoyka/averager)][github]
 
-## Installation
+## Installation and usage
 
-Averager is available on PyPI:
+Averager is [available on PyPI][pypi].
+Install it with your preferred package manager:
 
-```console
-$ python -m pip install averager
+```sh
+$ uv add averager
+$ pip install averager
 ```
 
-Averager officially supports Python 3.6+.
+Averager officially supports Python 3.9+.
 
-## API Reference
+**[Read the documentation][docs]** to learn how to use Averager.
 
-See [Read the Docs](https://averager.readthedocs.io) for Averager's documentation.
+[codecov]: https://codecov.io/github/bsoyka/averager
+
+[docs]: https://averager.readthedocs.io
+
+[github]: https://github.com/bsoyka/averager
+
+[license]: https://github.com/bsoyka/averager/blob/master/LICENSE
+
+[pypi]: https://pypi.org/project/averager/
+
+[testing]: https://github.com/bsoyka/averager/actions/workflows/test.yml

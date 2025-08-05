@@ -17,7 +17,6 @@ def _optional_int(value: float) -> Union[float, int]:
         >>> _optional_int(1.2)
         1.2
     """
-
     if value == int(value):
         return int(value)
 
