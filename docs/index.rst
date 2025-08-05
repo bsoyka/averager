@@ -1,5 +1,5 @@
 Averager
-=====
+========
 
 **Averager** is a simple Python library to calculate averages of values.
 
