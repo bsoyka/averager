@@ -1,6 +1,6 @@
 [project]
 name = "averager"
-version = "3.0.0"
+version = "3.1.0"
 description = "A simple Python library to calculate averages of values."
 authors = [
     { name = "Ben Soyka", email = "hello@bsoyka.me" }
