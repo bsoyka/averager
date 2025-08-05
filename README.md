@@ -14,6 +14,10 @@
 3
 ```
 
+> [!WARNING]
+> Averager is deprecated, and no new features will be added. Please use the built-in [
+`statistics` module][statistics] for similar functionality and more.
+
 [![Total Downloads](https://img.shields.io/pepy/dt/averager)][pypi]
 [![Supported Versions](https://img.shields.io/pypi/pyversions/averager.svg)][pypi]
 [![Testing Status](https://img.shields.io/github/actions/workflow/status/bsoyka/averager/test.yml?branch=main&label=tests)][testing]
@@ -43,5 +47,7 @@ Averager officially supports Python 3.9+.
 [license]: https://github.com/bsoyka/averager/blob/master/LICENSE
 
 [pypi]: https://pypi.org/project/averager/
+
+[statistics]: https://docs.python.org/3/library/statistics.html
 
 [testing]: https://github.com/bsoyka/averager/actions/workflows/test.yml

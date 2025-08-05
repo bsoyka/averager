@@ -13,6 +13,10 @@ Averager
 >>> averager.mode(1, 2, 4, 3, 3)
 3
 
+.. WARNING::
+    Averager is deprecated, and no new features will be added.
+    Please use the built-in `statistics module <https://docs.python.org/3/library/statistics.html>`_ for similar functionality and more.
+
 |Total Downloads| |Supported Versions| |Testing Status| |Coverage| |GitHub last commit| |GitHub Repo stars|
 
 .. |Total Downloads| image:: https://img.shields.io/pepy/dt/averager

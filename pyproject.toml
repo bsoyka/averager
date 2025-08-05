@@ -10,7 +10,7 @@ requires-python = ">=3.9"
 license = "MIT"
 license-files = ["LICENSE"]
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
+    "Development Status :: 7 - Inactive",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
@@ -26,6 +26,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
+    "deprecated>=1.2.18",
 ]
 
 [dependency-groups]
@@ -50,6 +51,7 @@ typing = [
     "mypy",
     "pytest",
     "tomli",
+    "types-deprecated>=1.2.15.20250304",
 ]
 
 [project.urls]

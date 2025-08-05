@@ -5,6 +5,8 @@ from __future__ import annotations
 import importlib.metadata
 from typing import TYPE_CHECKING
 
+from deprecated import deprecated
+
 from averager._utils import _optional_int
 
 if TYPE_CHECKING:
@@ -13,6 +15,9 @@ if TYPE_CHECKING:
 __version__ = importlib.metadata.version('averager')
 
 
+@deprecated(
+    version='3.1.0', reason='Use the built-in statistics module instead of Averager.'
+)
 def average(*values: float) -> float | int:
     """Calculate an unweighted average.
 
@@ -31,6 +36,9 @@ def average(*values: float) -> float | int:
     return _optional_int(res)
 
 
+@deprecated(
+    version='3.1.0', reason='Use the built-in statistics module instead of Averager.'
+)
 def weighted_average(*values: Iterable[float | int]) -> float | int:
     """Calculate a weighted average.
 
@@ -63,6 +71,9 @@ def weighted_average(*values: Iterable[float | int]) -> float | int:
     return _optional_int(res)
 
 
+@deprecated(
+    version='3.1.0', reason='Use the built-in statistics module instead of Averager.'
+)
 def median(*values: float) -> float | int:
     """Calculate the median, or middle number.
 
@@ -88,6 +99,9 @@ def median(*values: float) -> float | int:
     return _optional_int(sorted_values[middle])
 
 
+@deprecated(
+    version='3.1.0', reason='Use the built-in statistics module instead of Averager.'
+)
 def mode(*values: float) -> float | int | set[float | int]:
     """Calculate the mode, or most common value.
 
