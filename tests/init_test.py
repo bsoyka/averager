@@ -7,7 +7,7 @@ from averager import __version__
 try:
     import tomllib  # type: ignore[import-not-found,unused-ignore]
 except ModuleNotFoundError:
-    import tomli as tomllib  # type: ignore[no-redef]
+    import tomli as tomllib  # type: ignore[no-redef,unused-ignore]
 
 
 def test_version() -> None:
